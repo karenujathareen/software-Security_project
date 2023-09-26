@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+</head>
+<body>
+    <h1>User Registration</h1>
+    <form name="register"   method="post" action="{{url_for('Register')}}" >
+    <fieldset>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <label for="password">Confirm Password:</label>
+        <input type="password" id="cpassword" name="cpassword" required><br><br>
+
+        <label for="role">Role:</label>
+        <select id="role" name="role" required>
+            <option value="Admin">Admin</option>
+            <option value="customer">Customer</option>
+            <option value="manager">Manager</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </fieldset>
+    <a href="{{url_for('send')}}"> send message</a>
+    <a href="{{url_for('read')}}"> read message</a>
+
+    {% if mesage is defined and mesage %}
+               <div class ="message">{{mesage}}</div>
+            {% endif %}
+</form>
+
+
+
+
+</body>
+</html>

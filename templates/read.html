@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Form</title>
+</head>
+<body>
+    <h1>View Message</h1>
+    <form name="register"   method="post" action="{{url_for('read')}}" method="post">
+        <fieldset>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+        <div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea>
+        </div>
+        </fieldset>
+        <a href="{{url_for('send')}}"> send message</a>
+    <a href="{{url_for('read')}}"> read message</a>
+
+    {% if mesage is defined and mesage %}
+               <div class ="message">{{mesage}}</div>
+            {% endif %}
+    </form>
+
+</body>
+</html>

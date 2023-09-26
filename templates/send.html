@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Message</title>
+</head>
+<body>
+    <h1>Send Message</h1>
+    <form name="register"   method="post" action="{{url_for('send')}}" method="post">
+        <fieldset>
+        <label for="role">Select Role:</label>
+        <select name="role" id="role">
+            <option value="admin">Admin</option>
+            <option value="customer">Customer</option>
+            <option value="manager">Manager</option>
+        </select>
+        <br>
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" rows="4" cols="50">{{Data}}</textarea>
+        <br>
+        <input type="submit" value="Submit">
+        </fieldset>
+        <a href="Register">Registration</a>
+    <a href="{{url_for('read')}}"> read message</a>
+
+    {% if mesage is defined and mesage %}
+               <div class ="message">{{mesage}}</div>
+            {% endif %}
+    </form>
+
+
+</body>
+</html>
